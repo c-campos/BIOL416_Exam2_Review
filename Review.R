@@ -38,3 +38,24 @@ if(best.candy=='m&ms') {
 }
 
 
+
+
+# Wide to long ----
+  #library(tidyverse)
+auto <- mtcars
+head(auto)
+
+auto.long <- gather(data = auto, key = 'metrics', value = 'value', c(1:3)) # take the column headings from 1-3 and gather them into a new single column 'metrics' then print their associated values to 'value'
+head(auto.long)
+
+# we can also use melt from reshape2
+  #library(reshape2)
+
+auto.long.melt <- melt(data = auto, id.vars = c('hp', 'drat', 'wt', 'qsec', 'vs', 'gear', 'carb'), measure.vars = c('mpg', 'cyl', 'disp'), variable.name = 'metrics') # this time we need to specify the columns we want to keep in 'id.vars' and the columns we want to compress in 'measure.vars', and the name of new column in 'variable.name'
+
+#practice: use the columns 'hp', 'wt', and 'gear'. 
+
+auto.long.2 <- gather(data = auto, key = 'metrics', value = 'value', c(4,6,10))
+
+auto.long.melt.2 <- melt(data = auto, id.vars = c('mpg', 'cyl', 'disp', 'drat', 'qsec', 'vs', 'am', 'carb'), measure.vars = c('hp', 'wt', 'gear'), variable.name = 'metrics')
+head(auto.long.melt.2)
