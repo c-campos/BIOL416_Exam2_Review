@@ -1,6 +1,6 @@
 # Exam 2 Review 26Oct21
   
-#Github version control ----
+### Github version control ----
     # 1. create a github repository with a readme file
     # 2. Copy repository link
     # 3. Create new version control directory in R and paste github link
@@ -9,7 +9,7 @@
     # 6. If you want to save the changes to your file on Github, you need to first COMMIT your files which will stage them and make them available for review by collaborators (if available) then PUSH to main branch
     # TIPS: if your work is ever ahead of your repository, 
 
-# if...else statements ----
+### if...else statements ----
 
 best.candy <- 'reeses.cups'
 halloween.time <- 'no'
@@ -37,10 +37,7 @@ if(best.candy=='m&ms') {
   reaction <- 'meh'
 }
 
-
-
-
-# Wide to long ----
+#### Wide to long ----
   #library(tidyverse)
 auto <- mtcars
 head(auto)
