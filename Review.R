@@ -56,3 +56,29 @@ auto.long.2 <- gather(data = auto, key = 'metrics', value = 'value', c(4,6,10))
 
 auto.long.melt.2 <- melt(data = auto, id.vars = c('mpg', 'cyl', 'disp', 'drat', 'qsec', 'vs', 'am', 'carb'), measure.vars = c('hp', 'wt', 'gear'), variable.name = 'metrics')
 head(auto.long.melt.2)
+
+### Custom Functions ----
+
+#one argument
+area.circle <- function(radius) {
+  area <- pi*radius^2
+  return(area)
+}
+area.big.circle <- area.circle(radius = 100)
+
+#two arguments
+area.square <- function(len, wid) {
+  area <- len*wid
+  return(area)
+}
+
+# what if we add if else to function
+area.square <- function(l, w) {
+  w <- if_else(condition = l>5, 10, w)
+  area <- l*w
+  return(area)
+} # if l is greater than 5 then w will be replaced with 10 if l is less 5 or less then our input w will be kept
+
+area.square(6, 2) # l greater than 5, w is changed to 10
+
+area.square(4, 5) # l is less than 5, w is retained
