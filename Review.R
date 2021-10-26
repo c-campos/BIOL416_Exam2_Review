@@ -88,3 +88,4 @@ area.square(4, 5) # l is less than 5, w is retained
   # if you include a value not defined in the function then you get an error
   # if you define an object within your function as an object outside of your function, your function will ignore the outside value
   # if you use return of an abject outside of your function, the function will return that object at the end of all of its work
+
